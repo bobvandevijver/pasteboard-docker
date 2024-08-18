@@ -15,10 +15,11 @@ WORKDIR /pasteboard
 RUN npm install
 
 ENV MAX=7
+ENV LOCAL=true
 
 VOLUME ["/pasteboard/public/storage/"]
 EXPOSE 4000
 
 USER www-data
 
-CMD ["/pasteboard/run_local"]
+CMD ["npm", "run", "start"]
