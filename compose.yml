@@ -1,0 +1,13 @@
+services:
+  pasteboard:
+    build:
+      context: .
+    restart: always
+    environment:
+      ORIGIN: 'https://<my-domain>'
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
+    volumes:
+      - "./data:/pasteboard/public/storage/"
+    ports:
+      - "4000:4000"
